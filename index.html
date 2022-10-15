@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
+    <link rel="stylesheet" href="/docs/assets/styles/style.css" />
+    <title>Karibaaaa!!!</title>
 </head>
 <body>
-    <h1>Hey man!</h1>
+    <h1>Let's play Karibaaaa!!!</h1>
 
     <div class="game-intro">
-        <img src="./images/logo.png" alt="" class="logo-img" />
+        <img src="/docs/assets/images/Kariba Cover.webp" alt="" class="logo-img" />
         <br />
         <button id="start-button">StartGame</button>
-        <p>Use the left and right arrow to control the car!</p>
-        <img src="./images/arrows.png" alt="" class="arrows-img" />
+        <p>Click on the cards you wish to play!</p>
+        <img src="" alt="" class="arrows-img" />
       </div>
   
       <div id="game-board">
-        <canvas id="canvas" width="500" height="700"></canvas>
+        <!-- por decidir o tamanho do canvas -->
+        <canvas style="border: 5px solid black" id="canvas" width="1000" height="700"></canvas>
       </div>
   
-      <script type="text/javascript" src="js/enemy.js"></script>
-      <script type="text/javascript" src="js/controls.js"></script>
-      <script type="text/javascript" src="js/player.js"></script>
-      <script type="text/javascript" src="js/game.js"></script>
-      <script type="text/javascript" src="js/index.js"></script>
-      
+      <script type="text/javascript" src="/docs/assets/scripts/cards.js"></script>
+      <script type="text/javascript" src="/docs/assets/scripts/deck.js"></script>
+      <script type="text/javascript" src="/docs/assets/scripts/board.js"></script>
+      <script type="text/javascript" src="/docs/assets/scripts/enemy.js"></script>
+      <script type="text/javascript" src="/docs/assets/scripts/player.js"></script>
+      <script type="text/javascript" src="/docs/assets/scripts/game.js"></script>
+      <script type="text/javascript" src="/docs/assets/scripts/main.js"></script>
+
 </body>
 </html>
