@@ -1,7 +1,7 @@
 class Board {
     constructor(ctx) {
         //this.canvas = document.getElementById('canvas');
-        this.ctx = this.ctx;
+        this.ctx = ctx;
         this.background = new Image();
         // por decidir o tamanho do canvas
         this.width = 1000;

@@ -59,9 +59,9 @@ class Deck {
     }
 }
 
-module.exports = { Deck };
+//module.exports = { Deck };
 
-let deck = new Deck(allCards);
+//let deck = new Deck(allCards);
 
 //console.log(deck);
 //console.log(deck.dealCard());
