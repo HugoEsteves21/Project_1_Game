@@ -13,7 +13,7 @@ class Board {
     drawBoard() {
         // ainda por decidir como fica o tabuleiro de jogo
         this.background.src = '/docs/assets/images/Kariba Board.webp';
-        this.ctx.drawImage(this.background, 0, 0, this.width, this.height);
+        this.ctx.drawImage(this.background, 0, 0, 500, 250);
     }
 
     cardsOnBoard(cards) {

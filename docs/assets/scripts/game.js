@@ -16,13 +16,13 @@ class Game {
         //this.player = new Player(this.deck, this.board);
         this.intervalId = setInterval(this.update, 1000 / 60);
         this.deck.shuffleDeck();
+        //this.player.gameStart();
+        this.enemy.gameStart();
         // need to create the event to click the card I want to play!
     }
 
-    update() {
+    update = () => {
         this.board.drawBoard();
-        //this.player.gameStart();
-        this.enemy.gameStart();
         // o jogador joga primeiro
         //this.player.playCards();
         // adicionamos pontos, se existirem

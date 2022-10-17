@@ -38,10 +38,13 @@ class Deck {
 
     dealCard() {
         
-        // fazer sempre depois de jogar
         // pode ser necessário fazer mais que uma vez consoante o nº de cartas que jogar
-        // validar antes se ainda existem cartas no baralho?
-        return this.cards.shift();
+        if (this.cards.length !== 0) {
+            let cardDealed = this.cards.shift();
+            //console.log(cardDealed)
+            return cardDealed;
+            
+        } 
     }
 
     endOfDeck() {
@@ -58,12 +61,10 @@ class Deck {
     }
 }
 
-//module.exports = { Deck };
-
-let deck = new Deck(allCards);
+//let deck = new Deck(allCards);
 
 //console.log(deck);
-console.log(deck.dealCard());
+//console.log(deck.dealCard());
 //console.log(deck.dealCard());
 //console.log(deck.shuffleDeck());
 //console.log(deck)
