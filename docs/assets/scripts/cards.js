@@ -72,4 +72,3 @@ const allCards = [
     {name: "eight", value: "8", img: ""},
 ]
 
-module.exports = { allCards };

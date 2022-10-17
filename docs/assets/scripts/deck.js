@@ -1,25 +1,24 @@
-const { allCards } = require('./cards.js')
-
 class Deck {
     
-    constructor(cards) {
+    constructor(cards, ctx) {
         // É necessário copiar?
         //let cards = [...allCards];
         this.cards = cards;
         this.count = 0;
-        this.canvas = document.getElementById('canvas');
-        this.ctx = canvas.getContext('2d');
-        this.x = x;
-        this.y = y;
+        //this.canvas = document.getElementById('canvas');
+        //this.ctx = canvas.getContext('2d');
+        this.ctx = ctx;
+        this.x = 0;
+        this.y = 0;
         this.w = 20;
         this.h = 60;
         this.color = 'white';
     }
 
-    drawCard(x, y) {
+    drawCard() {
         // desenhar a carta
         this.ctx.fillStyle = this.color;
-        this.ctx.fillRect(x, y, this.w, this.h);
+        this.ctx.fillRect(this.x, this.y, this.w, this.h);
     }
 
     shuffleDeck() {
@@ -61,10 +60,10 @@ class Deck {
 
 //module.exports = { Deck };
 
-//let deck = new Deck(allCards);
+let deck = new Deck(allCards);
 
 //console.log(deck);
-//console.log(deck.dealCard());
+console.log(deck.dealCard());
 //console.log(deck.dealCard());
 //console.log(deck.shuffleDeck());
 //console.log(deck)
