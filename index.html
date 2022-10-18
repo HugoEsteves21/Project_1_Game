@@ -8,26 +8,33 @@
     <title>Karibaaaa!!!</title>
 </head>
 <body>
-    <h1>Let's play Karibaaaa!!!</h1>
 
-    <div class="game-intro">
-        <img src="/docs/assets/images/Kariba Cover.webp" alt="" class="logo-img" />
-        <br />
-        <button id="start-button">StartGame</button>
-        <p>Click on the cards you wish to play!</p>
-        <img src="" alt="" class="arrows-img" />
+    <div class="general">
+      <div class="game-header">
+        <img class="title-image" src="/docs/assets/images/Kariba Title.png" alt="title-img">
+        <!-- <h1>Let's play Karibaaaa!!!</h1> -->
+        <div class="game-intro">
+            <img src="/docs/assets/images/Kariba Cover.webp" alt="" class="logo-img" />
+            <br />
+            <button id="start-button">StartGame</button>
+            <p>Press the number of the card you wish to play!</p>
+        </div>
       </div>
-  
-      <div id="game-board">
-        <!-- por decidir o tamanho do canvas -->
-        <canvas style="border: 5px solid black" id="canvas" width="1000" height="700"></canvas>
+
+      <div>
+        <div id="game-board">
+          <!-- por decidir o tamanho do canvas -->
+          <canvas style="border: 5px solid black" id="canvas" width="1000" height="700"></canvas>
+        </div>
       </div>
+      
+    </div>
   
       <script type="text/javascript" src="/docs/assets/scripts/cards.js"></script>
       <script type="text/javascript" src="/docs/assets/scripts/deck.js"></script>
       <script type="text/javascript" src="/docs/assets/scripts/board.js"></script>
+      <script type="text/javascript" src="/docs/assets/scripts/controls.js"></script>
       <script type="text/javascript" src="/docs/assets/scripts/enemy.js"></script>
-      <script type="text/javascript" src="/docs/assets/scripts/clicks.js"></script>
       <script type="text/javascript" src="/docs/assets/scripts/player.js"></script>
       <script type="text/javascript" src="/docs/assets/scripts/game.js"></script>
       <script type="text/javascript" src="/docs/assets/scripts/main.js"></script>

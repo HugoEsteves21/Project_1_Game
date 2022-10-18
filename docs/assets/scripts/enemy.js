@@ -16,7 +16,7 @@ class Enemy {
             this.playerHand.push(this.deck.dealCard());
             
         }
-        console.log(this.playerHand)
+        //console.log(this.playerHand)
         return this.playerHand;
     }
 
@@ -26,9 +26,10 @@ class Enemy {
         if (this.playerHand.length !== 0) {
             
             // escolher carta random da mão do jogador
+            // corrigir!!!
             let randomCard = Math.floor((Math.random() * this.playerHand.length));
             let cardToPlay = this.playerHand[randomCard]
-            console.log(this.playerHand[randomCard]);
+            console.log(cardToPlay);
             console.log(this.playerHand);
             //console.log(cardToPlay);
 
@@ -79,6 +80,7 @@ class Enemy {
                     }
                 }
             }
+            console.log(this.playerDeck)
             
             // dependendo do valor da carta, desenhar no sitio correto
             // falta decidir a posição para cada número!
@@ -121,12 +123,5 @@ class Enemy {
 
     addPoints() {
 
-        //adicionar, se existirem, cartas ao deck do jogador
-        // this.board = [[],[],[],[],[],[],[],[]];
-        /* for (let i = 0; i < this.board.length; i++) {
-            for (let j = 0; j < this.board[i].length; j++) {
-
-            }
-        } */
     }
 }
