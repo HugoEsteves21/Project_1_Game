@@ -30,7 +30,7 @@ class Enemy {
             let cardToPlay = this.playerHand[randomCard]
             console.log(this.playerHand[randomCard]);
             console.log(this.playerHand);
-            console.log(cardToPlay);
+            //console.log(cardToPlay);
 
             // por a carta que quero jogar no array play
             this.play.push(this.playerHand[randomCard]);
@@ -40,18 +40,49 @@ class Enemy {
             this.board.cardsOnBoard(this.play);
             console.log(this.board.board);
 
-            // this.board = [[],[],[],[],[],[],[],[]];
-       /*      for (let i = 0; i < this.board.length; i++) {
-                if (cardToPlay.value === 1 &&  this.board[i].length >= 3)
+            // verificar se "comemos" alguma carta
+            // this.board = [[1],[2],[3],[4],[5],[6],[7],[8]];
+            for (let i = this.board.length - 1; i > 0; i--) {
                 
-                for (let j = 0; j < this.board[i].length; j++) {
-
+                if (cardToPlay.valor === 1 && this.board[0].length >= 3 && this.board[7].length > 0) {
+                    for (let p = 0; p < this.board[0].length; p++) {
+                        this.playerDeck.push(this.board[7][p]);
+                        this.board[7][p].shift();
+                    }
                 }
-            } */
+                
+                if (cardToPlay.valor === (i + 1) && this.board[i].length >= 3) {
+                    for (let j = 0; j < this.board[i].length; j++) {
+                        
+                        if (this.board[i - 1].length > 0) {
+                            this.playerDeck.push(this.board[i - 1][j]);
+                            this.board[i - 1][j].shift();
+                        } else if (this.board[i - 2].length > 0) {
+                            this.playerDeck.push(this.board[i - 2][j]);
+                            this.board[i - 2][j].shift();
+                        } else if (this.board[i - 3].length > 0) {
+                            this.playerDeck.push(this.board[i - 3][j]);
+                            this.board[i - 3][j].shift();
+                        } else if (this.board[i - 4].length > 0) {
+                            this.playerDeck.push(this.board[i - 4][j]);
+                            this.board[i - 4][j].shift();
+                        } else if (this.board[i - 5].length > 0) {
+                            this.playerDeck.push(this.board[i - 5][j]);
+                            this.board[i - 5][j].shift();
+                        } else if (this.board[i - 6].length > 0) {
+                            this.playerDeck.push(this.board[i - 6][j]);
+                            this.board[i - 6][j].shift();
+                        } else if (this.board[i - 7].length > 0) {
+                            this.playerDeck.push(this.board[i - 7][j]);
+                            this.board[i - 7][j].shift();
+                        }
+                    }
+                }
+            }
             
             // dependendo do valor da carta, desenhar no sitio correto
             // falta decidir a posição para cada número!
-            switch (this.playerHand[randomCard].value) {
+            switch (this.playerHand[randomCard].valor) {
                 case 1:
                     this.deck.drawCard(10, 10);
                     break;

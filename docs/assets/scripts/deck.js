@@ -10,15 +10,15 @@ class Deck {
         this.ctx = ctx;
         this.x = 0;
         this.y = 0;
-        this.w = 20;
-        this.h = 60;
-        this.color = 'white';
+        this.w = 80;
+        this.h = 150;
+        this.color = 'blue';
     }
 
-    drawCard() {
+    drawCard(x, y) {
         // desenhar a carta
         this.ctx.fillStyle = this.color;
-        this.ctx.fillRect(this.x, this.y, this.w, this.h);
+        this.ctx.fillRect(x, y, this.w, this.h);
     }
 
     shuffleDeck() {

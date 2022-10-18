@@ -20,21 +20,21 @@ class Board {
         // cards seria um array com objectos - o array pode ter entre 1 e 5 objectos
         // cada objecto seria uma carta
         for(let i = 0; i < cards.length; i++) {
-            if(cards[i].value === 1) {
+            if(cards[i].valor === 1) {
                 this.board[0].push(cards[i]);
-            } else if (cards[i].value === 2) {
+            } else if (cards[i].valor === 2) {
                 this.board[1].push(cards[i]);
-            } else if (cards[i].value === 3) {
+            } else if (cards[i].valor === 3) {
                 this.board[2].push(cards[i]);
-            } else if (cards[i].value === 4) {
+            } else if (cards[i].valor === 4) {
                 this.board[3].push(cards[i]);
-            } else if (cards[i].value === 5) {
+            } else if (cards[i].valor === 5) {
                 this.board[4].push(cards[i]);
-            } else if (cards[i].value === 6) {
+            } else if (cards[i].valor === 6) {
                 this.board[5].push(cards[i]);
-            } else if (cards[i].value === 7) {
+            } else if (cards[i].valor === 7) {
                 this.board[6].push(cards[i]);
-            } else if (cards[i].value === 8) {
+            } else if (cards[i].valor === 8) {
                 this.board[7].push(cards[i]);
             }
         }

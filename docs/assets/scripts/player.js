@@ -26,7 +26,7 @@ class Player extends Enemy {
             
             // dependendo do valor da carta, desenhar no sitio correto
             // falta decidir a posição para cada número!
-            switch (this.playerHand[randomCard].value) {
+            switch (this.playerHand[randomCard].valor) {
                 case 1:
                     this.deck.drawCard(10, 10);
                     break;

@@ -18,6 +18,7 @@ class Game {
         this.deck.shuffleDeck();
         //this.player.gameStart();
         this.enemy.gameStart();
+        this.enemy.playCards();
         // need to create the event to click the card I want to play!
     }
 
@@ -28,7 +29,7 @@ class Game {
         // adicionamos pontos, se existirem
         //this.player.addPoints();
         // o bot joga
-        this.enemy.playCards();
+        //this.enemy.playCards();
         // adicionamos pontos, se existirem
         this.enemy.addPoints();
         this.checkGameOver();
