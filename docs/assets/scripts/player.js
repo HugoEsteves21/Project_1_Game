@@ -11,6 +11,32 @@ class Player extends Enemy {
         // preciso de chamar ja o new Deck() para poder usar o método?
         for (let i = 0; i < 5; i++) {
             this.playerHand.push(this.deck.dealCard());
+
+            switch (this.playerHand[i]) {
+                case 1:
+                    this.deck.drawCard1(10, 10);
+                    break;
+                case 2:
+                    this.deck.drawCard2(10, 120);
+                    break;
+                case 3:
+                    this.deck.drawCard3(10, 230);
+                    break;
+                case 4:
+                    this.deck.drawCard4(10, 340);
+                    break;
+                case 5:
+                    this.deck.drawCard5(10, 450);
+                    break;
+                case 6:
+                    this.deck.drawCard6(10, 560);
+                    break;
+                case 7:
+                    this.deck.drawCard7(10, 670);
+                    break;
+                case 8:
+                    this.deck.drawCard8(10, 780);
+            }
         }
         console.log(this.playerHand)
         return this.playerHand;
@@ -39,62 +65,32 @@ class Player extends Enemy {
             this.board.cardsOnBoard(this.play);
             console.log(this.board.board);
 
-            // verificar se "comemos" alguma carta
-            // this.board = [[1],[2],[3],[4],[5],[6],[7],[8]];
-         /*    for (let i = this.board.length - 1; i > 0; i--) {
-                
-                if (cardToPlay.valor === 1 && this.board[0].length >= 3 && this.board[7].length > 0) {
-                    for (let p = 0; p < this.board[0].length; p++) {
-                        this.playerDeck.push(this.board[7][p]);
-                        this.board[7][p].shift();
-                    }
-                }
-                
-                if (cardToPlay.valor === (i + 1) && this.board[i].length >= 3) {
-                    for (let j = 0; j < this.board[i].length; j++) {
-                        
-                        if (this.board[i - 1].length > 0) {
-                            this.playerDeck.push(this.board[i - 1][j]);
-                            this.board[i - 1][j].shift();
-                        } else if (this.board[i - 2].length > 0) {
-                            this.playerDeck.push(this.board[i - 2][j]);
-                            this.board[i - 2][j].shift();
-                        } else if (this.board[i - 3].length > 0) {
-                            this.playerDeck.push(this.board[i - 3][j]);
-                            this.board[i - 3][j].shift();
-                        } else if (this.board[i - 4].length > 0) {
-                            this.playerDeck.push(this.board[i - 4][j]);
-                            this.board[i - 4][j].shift();
-                        } else if (this.board[i - 5].length > 0) {
-                            this.playerDeck.push(this.board[i - 5][j]);
-                            this.board[i - 5][j].shift();
-                        } else if (this.board[i - 6].length > 0) {
-                            this.playerDeck.push(this.board[i - 6][j]);
-                            this.board[i - 6][j].shift();
-                        } else if (this.board[i - 7].length > 0) {
-                            this.playerDeck.push(this.board[i - 7][j]);
-                            this.board[i - 7][j].shift();
-                        }
-                    }
-                }
-            } */
-            
+            // verificar se "comemos" alguma carta           
             let foundCards = false;
 
             for (let i = 0; i < this.board.board.length; i++) {
                 if(this.board.board[cardToPlay.valor - 1].length >= 3 && !foundCards){
 
+                    if(cardToPlay.valor === 1 && this.board.board[7].length){
+                        let cardsInside8 = this.board.board[7].splice(0);
+                        this.playerDeck.push(...cardsInside8);
+                        this.board.board[7] = [];
+                        console.log(" USER PLAYER DECK", this.playerDeck);
+                        console.log("BOARD DELETED:", this.board.board[7]);
+                        console.log("WHOLE BOARD:", this.board.board);
+                        foundCards = true;
+                    }
                     //check array 1 eating 8
 
                     for (let j = cardToPlay.valor - 1; j > 0; j--){
                         if(this.board.board[j - 1].length){
-                            let cardsInside = this.board.board[j - 1].splice(0)
-                            this.playerDeck.push(...cardsInside)
-                            this.board.board[j - 1] = []
-                            console.log(" USER PLAYER DECK", this.playerDeck)
-                            console.log("BOARD DELETED:", this.board.board[j -1])
-                            console.log("WHOLE BOARD:", this.board.board)
-                            foundCards = true
+                            let cardsInside = this.board.board[j - 1].splice(0);
+                            this.playerDeck.push(...cardsInside);
+                            this.board.board[j - 1] = [];
+                            console.log(" USER PLAYER DECK", this.playerDeck);
+                            console.log("BOARD DELETED:", this.board.board[j - 1]);
+                            console.log("WHOLE BOARD:", this.board.board);
+                            foundCards = true;
                             break;
                         }
                     }

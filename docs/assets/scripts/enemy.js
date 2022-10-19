@@ -41,25 +41,30 @@ class Enemy {
             console.log(this.board.board);
 
             // verificar se "comemos" alguma carta
-            // this.board = [[1],[2],[3],[4],[5],[6],[7],[8]];
+            let foundCards = false;
+            
             for (let i = 0; i < this.board.board.length; i++) {
-                
-                //  console.log('cheguei aqui crl')
-             /*    if (enemyPlay.valor === 1 && this.board.board[0].length >= 3 && this.board.board[7].length > 0) {
-                    for (let p = 0; p < this.board.board[0].length; p++) {
-                        this.playerDeck.push(this.board.board[7][p]);
-                        this.board[7][p].shift();
+                if(this.board.board[enemyPlay.valor - 1].length >= 3 && !foundCards){
+
+                    if(enemyPlay.valor === 1 && this.board.board[7].length){
+                        let cardsInside8 = this.board.board[7].splice(0);
+                        this.playerDeck.push(...cardsInside8);
+                        this.board.board[7] = [];
+                        console.log(" ENEMY PLAYER DECK", this.playerDeck);
+                        console.log("BOARD DELETED:", this.board.board[7]);
+                        console.log("WHOLE BOARD:", this.board.board);
+                        foundCards = true;
                     }
-                } */
-                 
-                if(this.board.board[enemyPlay.valor - 1].length >= 3){
+
                     for (let j = enemyPlay.valor - 1; j > 0; j--){
                         if(this.board.board[j - 1].length){
-                            let cardsInside = this.board.board[j - 1].splice(0)
-                            this.playerDeck.push(...cardsInside)
-                            this.board.board[j - 1] = []
-                            console.log(" ENEMY PLAYER DECK", this.playerDeck)
-                            console.log("BOARD DELETED:", this.board.board[j -1])
+                            let cardsInside = this.board.board[j - 1].splice(0);
+                            this.playerDeck.push(...cardsInside);
+                            this.board.board[j - 1] = [];
+                            console.log(" ENEMY PLAYER DECK", this.playerDeck);
+                            console.log("BOARD DELETED:", this.board.board[j - 1]);
+                            console.log("WHOLE BOARD:", this.board.board);
+                            foundCards = true;
                             break;
                         }
                     }
