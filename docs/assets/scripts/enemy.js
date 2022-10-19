@@ -28,8 +28,8 @@ class Enemy {
             // escolher carta random da mão do jogador
         
             let cardToPlay = this.playerHand[Math.floor(Math.random() * this.playerHand.length)]
-            console.log("hand", this.playerHand);
-            console.log("to play",cardToPlay);
+            console.log("ENEMY hand", this.playerHand);
+            //console.log("to play",cardToPlay);
             //console.log(cardToPlay);
 
             // por a carta que quero jogar no array play
@@ -84,28 +84,28 @@ class Enemy {
             // falta decidir a posição para cada número!
             switch (cardToPlay.valor) {
                 case 1:
-                    this.deck.drawCard(10, 10);
+                    this.deck.drawCard(150, 100);
                     break;
                 case 2:
-                    this.deck.drawCard(60, 60);
+                    this.deck.drawCard(270, 100);
                     break;
                 case 3:
-                    this.deck.drawCard(120, 120);
+                    this.deck.drawCard(390, 100);
                     break;
                 case 4:
-                    this.deck.drawCard(180, 180);
+                    this.deck.drawCard(510, 100);
                     break;
                 case 5:
-                    this.deck.drawCard(230, 230);
+                    this.deck.drawCard(630, 100);
                     break;
                 case 6:
-                    this.deck.drawCard(300, 300);
+                    this.deck.drawCard(750, 100);
                     break;
                 case 7:
-                    this.deck.drawCard(350, 350);
+                    this.deck.drawCard(870, 100);
                     break;
                 case 8:
-                    this.deck.drawCard(400, 400);
+                    this.deck.drawCard(990, 100);
             }
             
             // retirar carta da mão do jogador

@@ -1,8 +1,6 @@
 class Deck {
     
     constructor(cards, ctx) {
-        // É necessário copiar?
-        //let cards = [...allCards];
         this.cards = cards;
         this.count = 0;
         //this.canvas = document.getElementById('canvas');
@@ -10,7 +8,7 @@ class Deck {
         this.ctx = ctx;
         this.x = 0;
         this.y = 0;
-        this.w = 80;
+        this.w = 100;
         this.h = 150;
         this.color = 'blue';
     }
@@ -19,6 +17,9 @@ class Deck {
         // desenhar a carta
         this.ctx.fillStyle = this.color;
         this.ctx.fillRect(x, y, this.w, this.h);
+        this.ctx.fillText('Ola', x, y);
+        //this.ctx.font = 'bold 10px';
+        //thix.ctx.strokeStyle = 'red';
     }
 
     shuffleDeck() {
