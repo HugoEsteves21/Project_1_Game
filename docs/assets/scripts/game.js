@@ -14,12 +14,13 @@ class Game {
         this.deck = new Deck(allCards, this.ctx);
         this.board = new Board(this.deck, this.ctx);
         this.enemy = new Enemy(this.deck, this.board);
-        this.controls = new Controls(this.player, this.enemy);
         this.player = new Player(this.deck, this.board);
+        this.controls = new Controls(this.player, this.enemy);
         this.intervalId = setInterval(this.update, 1000 / 60);
         this.deck.shuffleDeck();
         this.player.gameStart();
         this.enemy.gameStart();
+        this.controls.keyboardEvents()
         //this.player.playCards();
         //this.enemy.playCards();
         // need to create the event to click the card I want to play!

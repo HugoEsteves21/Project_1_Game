@@ -5,20 +5,23 @@ class Player extends Enemy {
         this.controls = controls;
     }
 
-    playCards() {
+    playCards(valor) {
         
         // validar se playerHand() esta vazio?
         if (this.playerHand.length !== 0) {
-            
+            let cardToPlay = this.playerHand.filter((card) => card.valor === valor)[0]
+            if(cardToPlay){
+
+
+           
             // escolher carta random da mão do jogador
-            let randomCard = Math.floor((Math.random() * this.playerHand.length));
-            let cardToPlay = this.playerHand[randomCard]
-            console.log(this.playerHand[randomCard]);
-            console.log(this.playerHand);
-            //console.log(cardToPlay);
+        
+            /* let cardToPlay = this.playerHand[Math.floor(Math.random() * this.playerHand.length)] */
+           
+            console.log("PLAYER Hand", this.playerHand);
 
             // por a carta que quero jogar no array play
-            this.play.push(this.playerHand[randomCard]);
+            this.play.push(cardToPlay);
             console.log(this.play);
 
             // adicionar a carta ao array do board
@@ -67,7 +70,7 @@ class Player extends Enemy {
             
             // dependendo do valor da carta, desenhar no sitio correto
             // falta decidir a posição para cada número!
-            switch (this.playerHand[randomCard].valor) {
+            switch (cardToPlay.valor) {
                 case 1:
                     this.deck.drawCard(10, 10);
                     break;
@@ -94,13 +97,17 @@ class Player extends Enemy {
             }
             
             // retirar carta da mão do jogador
-            this.playerHand.splice(randomCard, 1);
+            this.playerHand.splice(this.playerHand.indexOf(cardToPlay), 1);
             for (let i = 0; i < this.play.length; i++) {
                 this.play.splice(i, 1);
             }
 
             //método para ir buscar carta ao deck
             this.playerHand.push(this.deck.dealCard());
+            this.enemy.playCards();  
+        } else {
+            console.log('Card not found')
         }
+    }
     }
 }
