@@ -74,7 +74,7 @@ class Game {
             winner.innerHTML = `You win with ${this.player.playerDeck.length} points!`
             console.log(`You win with ${this.player.playerDeck.length} points!`)
         } else if (this.player.playerDeck.length < this.enemy.playerDeck.length) {
-            let loser = document.getElementById('game-win-message');
+            let loser = document.getElementById('game-over-message');
             loser.innerHTML = `You loose with ${this.player.playerDeck.length} points!`
             console.log(`You loose with ${this.player.playerDeck.length} points!`)
         } else if (this.player.playerDeck.length === this.enemy.playerDeck.length) {
@@ -88,7 +88,7 @@ class Game {
 
         for (let i = 0; i < this.player.playerHand.length; i++){
             this.cardImg.src = `docs/assets/images/Card Images/Card ${this.player.playerHand[i].valor}.PNG`
-            this.ctx.drawImage(this.cardImg, 50 , 50 + i * 70, 70, 100 );
+            this.ctx.drawImage(this.cardImg, 50 , 60 + i * 120, 70, 100 );
             
         }
 
