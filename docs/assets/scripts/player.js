@@ -11,32 +11,6 @@ class Player extends Enemy {
         // preciso de chamar ja o new Deck() para poder usar o método?
         for (let i = 0; i < 5; i++) {
             this.playerHand.push(this.deck.dealCard());
-
-            switch (this.playerHand[i]) {
-                case 1:
-                    this.deck.drawCard1(10, 10);
-                    break;
-                case 2:
-                    this.deck.drawCard2(10, 120);
-                    break;
-                case 3:
-                    this.deck.drawCard3(10, 230);
-                    break;
-                case 4:
-                    this.deck.drawCard4(10, 340);
-                    break;
-                case 5:
-                    this.deck.drawCard5(10, 450);
-                    break;
-                case 6:
-                    this.deck.drawCard6(10, 560);
-                    break;
-                case 7:
-                    this.deck.drawCard7(10, 670);
-                    break;
-                case 8:
-                    this.deck.drawCard8(10, 780);
-            }
         }
         console.log(this.playerHand)
         return this.playerHand;
@@ -63,7 +37,7 @@ class Player extends Enemy {
 
             // adicionar a carta ao array do board
             this.board.cardsOnBoard(this.play);
-            console.log(this.board.board);
+            //console.log(this.board.board);
 
             // verificar se "comemos" alguma carta           
             let foundCards = false;
@@ -149,32 +123,40 @@ class Player extends Enemy {
             
             // dependendo do valor da carta, desenhar no sitio correto
             // falta decidir a posição para cada número!
-            switch (cardToPlay.valor) {
+            /* switch (cardToPlay.valor) {
                 case 1:
                     this.deck.drawCard1(150, 100);
+                    console.log('JOGUEI')
                     break;
                 case 2:
                     this.deck.drawCard2(270, 100);
+                    console.log('JOGUEI')
                     break;
                 case 3:
                     this.deck.drawCard3(390, 100);
+                    console.log('JOGUEI')
                     break;
                 case 4:
                     this.deck.drawCard4(510, 100);
+                    console.log('JOGUEI')
                     break;
                 case 5:
                     this.deck.drawCard5(630, 100);
+                    console.log('JOGUEI')
                     break;
                 case 6:
                     this.deck.drawCard6(750, 100);
+                    console.log('JOGUEI')
                     break;
                 case 7:
                     this.deck.drawCard7(870, 100);
+                    console.log('JOGUEI')
                     break;
                 case 8:
                     this.deck.drawCard8(990, 100);
+                    console.log('JOGUEI')
             }
-            
+             */
             // retirar carta da mão do jogador
             this.playerHand.splice(this.playerHand.indexOf(cardToPlay), 1);
             for (let i = 0; i < this.play.length; i++) {
@@ -182,7 +164,9 @@ class Player extends Enemy {
             }
 
             //método para ir buscar carta ao deck
-            this.playerHand.push(this.deck.dealCard());
+            if(this.deck.cards.length){
+                this.playerHand.push(this.deck.dealCard());
+            }
             this.enemy.playCards();  
         } else {
             console.log('Card not found')

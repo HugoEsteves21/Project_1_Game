@@ -38,7 +38,7 @@ class Enemy {
 
             // adicionar a carta ao array do board
             this.board.cardsOnBoard(this.play);
-            console.log(this.board.board);
+            //console.log(this.board.board);
 
             // verificar se "comemos" alguma carta
             let foundCards = false;
@@ -118,7 +118,7 @@ class Enemy {
             
             // dependendo do valor da carta, desenhar no sitio correto
             // falta decidir a posição para cada número!
-            switch (enemyPlay.valor) {
+            /* switch (enemyPlay.valor) {
                 case 1:
                     this.deck.drawCard1(150, 100);
                     break;
@@ -142,7 +142,7 @@ class Enemy {
                     break;
                 case 8:
                     this.deck.drawCard8(990, 100);
-            }
+            } */
             
             // retirar carta da mão do jogador
             this.playerHand.splice(this.playerHand.indexOf(enemyPlay), 1);

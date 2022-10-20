@@ -10,7 +10,7 @@ class Deck {
         this.y = 0;
         this.w = 100;
         this.h = 100;
-        this.color = 'blue';
+        //this.color = 'blue';
         this.card1 = new Image();
         this.card2 = new Image();
         this.card3 = new Image();

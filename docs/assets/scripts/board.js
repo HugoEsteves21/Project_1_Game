@@ -8,12 +8,97 @@ class Board {
         this.width = 1000;
         this.height = 700;
         this.board = [[],[],[],[],[],[],[],[]];
+        this.cardImgs = [
+            "docs/assets/images/Card Images/Card 1.PNG",
+            "docs/assets/images/Card Images/Card 2.PNG",
+            "docs/assets/images/Card Images/Card 3.PNG",
+            "docs/assets/images/Card Images/Card 4.PNG",
+            "docs/assets/images/Card Images/Card 5.PNG",
+            "docs/assets/images/Card Images/Card 6.PNG",
+            "docs/assets/images/Card Images/Card 7.PNG",
+            "docs/assets/images/Card Images/Card 8.PNG",
+        ]
+        this.img1 = new Image()
+        this.img2 = new Image()
+        this.img3 = new Image()
+        this.img4 = new Image()
+        this.img5 = new Image()
+        this.img6 = new Image()
+        this.img7 = new Image()
+        this.img8 = new Image()
+        this.img1.src = "docs/assets/images/Card Images/Card 1.PNG",
+        this.img2.src = "docs/assets/images/Card Images/Card 2.PNG",
+        this.img3.src = "docs/assets/images/Card Images/Card 3.PNG",
+        this.img4.src = "docs/assets/images/Card Images/Card 4.PNG",
+        this.img5.src = "docs/assets/images/Card Images/Card 5.PNG",
+        this.img6.src = "docs/assets/images/Card Images/Card 6.PNG",
+        this.img7.src = "docs/assets/images/Card Images/Card 7.PNG",
+        this.img8.src = "docs/assets/images/Card Images/Card 8.PNG"
     }
 
-    drawBoard() {
+    drawBoard = () => {
+        //console.log(this.board)
+        this.ctx.clearRect(0, 0, 1100, 700)
+        this.drawBoardOne()
+        this.drawBoardTwo()
+        this.drawBoardThree()
+        this.drawBoardFour()
+        this.drawBoardFive()
+        this.drawBoardSix()
+        this.drawBoardSeven()
+        this.drawBoardEight()
+       
+
+
         // ainda por decidir como fica o tabuleiro de jogo
         /* this.background.src = '/docs/assets/images/Kariba Board.webp';
         this.ctx.drawImage(this.background, 280, 180, 400, 200); */
+    }
+  /*   drawSingleBoard(board, index){
+        this.img.src = this.cardImgs[index]
+        for (let i = 0; i < board.length; i++){
+        this.ctx.drawImage(this.img, 10 + index * 100, 50 + i * 100, 100, 100 ) 
+        }
+    } */
+    drawBoardOne(){
+        for (let i = 0; i < this.board[0].length; i++){
+        this.ctx.drawImage(this.img1, 10 , 50 + i * 100, 100, 100 ) 
+        }
+    }
+    drawBoardTwo(){
+        for (let i = 0; i < this.board[1].length; i++){
+        this.ctx.drawImage(this.img2, 110 , 50 + i * 100, 100, 100 ) 
+        }
+    }
+    drawBoardThree(){
+        for (let i = 0; i < this.board[2].length; i++){
+        this.ctx.drawImage(this.img3, 210 , 50 + i * 100, 100, 100 ) 
+        }
+    }
+    drawBoardFour(){
+        for (let i = 0; i < this.board[3].length; i++){
+        this.ctx.drawImage(this.img4, 310 , 50 + i * 100, 100, 100 ) 
+        }
+    }
+    drawBoardFive(){
+        for (let i = 0; i < this.board[4].length; i++){
+        this.ctx.drawImage(this.img5, 410 , 50 + i * 100, 100, 100 ) 
+        }
+    }
+    drawBoardSix(){
+        for (let i = 0; i < this.board[5].length; i++){
+        this.ctx.drawImage(this.img6, 510 , 50 + i * 100, 100, 100 ) 
+        }
+    }
+    drawBoardSeven(){
+        for (let i = 0; i < this.board[6].length; i++){
+        this.ctx.drawImage(this.img7, 610 , 50 + i * 100, 100, 100 ) 
+        }
+    }
+    drawBoardEight(){
+        for (let i = 0; i < this.board[7].length; i++){
+        this.ctx.drawImage(this.img8, 710 , 50 + i * 100, 100, 100 ) 
+        }
     }
 
     cardsOnBoard(cards) {
