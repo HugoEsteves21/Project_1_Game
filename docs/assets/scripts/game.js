@@ -38,6 +38,7 @@ class Game {
     }
 
     checkGameOver() {
+        
         if (this.enemy.playerHand.length === 0 && this.player.playerHand.length === 0) {
             this.checkWinner();
             if (this.player.playerDeck.length > this.enemy.playerDeck.length) {
@@ -61,15 +62,20 @@ class Game {
         this.deck = null;
         this.controls = null;
         this.player = null;
-        let screenGameOver = document.getElementById('game-over');
+        //let screenGameOver = document.getElementById('game-over');
         //screenGameOver.classList.remove('hidden');
         this.gameRun = false;
     }
 
     checkWinner() {
+        
         if (this.player.playerDeck.length > this.enemy.playerDeck.length) {
+            let winner = document.getElementById('game-over-message');
+            winner.innerHTML = `You win with ${this.player.playerDeck.length} points!`
             console.log(`You win with ${this.player.playerDeck.length} points!`)
         } else if (this.player.playerDeck.length < this.enemy.playerDeck.length) {
+            let loser = document.getElementById('game-win-message');
+            loser.innerHTML = `You loose with ${this.player.playerDeck.length} points!`
             console.log(`You loose with ${this.player.playerDeck.length} points!`)
         } else if (this.player.playerDeck.length === this.enemy.playerDeck.length) {
             console.log("It's a draw");
