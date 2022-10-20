@@ -151,7 +151,9 @@ class Enemy {
             }
 
             //método para ir buscar carta ao deck
-            this.playerHand.push(this.deck.dealCard());
+            if(this.deck.cards.length) {
+                this.playerHand.push(this.deck.dealCard());
+            }
         }
     }
 

@@ -122,11 +122,3 @@ class Deck {
         console.log(this.cards);
     }
 }
-
-//let deck = new Deck(allCards);
-
-//console.log(deck);
-//console.log(deck.dealCard());
-//console.log(deck.dealCard());
-//console.log(deck.shuffleDeck());
-//console.log(deck)

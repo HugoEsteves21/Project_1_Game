@@ -5,17 +5,6 @@ class Player extends Enemy {
         this.enemy = enemy;
     }
 
-    gameStart() {
-
-        //let coordinates = [[10,10], [10, 170], [10, 330], [10, 490], [10, 650]]
-        // preciso de chamar ja o new Deck() para poder usar o método?
-        for (let i = 0; i < 5; i++) {
-            this.playerHand.push(this.deck.dealCard());
-        }
-        console.log(this.playerHand)
-        return this.playerHand;
-    }
-
     playCards(valor) {
         
         // validar se playerHand() esta vazio?
@@ -23,7 +12,15 @@ class Player extends Enemy {
             let cardToPlay = this.playerHand.filter((card) => card.valor === valor)[0]
             if(cardToPlay){
 
+            /* for (let p = 0; p < this.playerHand.length; p++) {
+                if()
+            }
 
+                drawBoardOne(){
+                    for (let i = 0; i < this.board[0].length; i++){
+                    this.ctx.drawImage(this.img1, 250 , 50 + i * 70, 70, 100 ) 
+                    }
+                } */
            
             // escolher carta random da mão do jogador
         
@@ -54,7 +51,6 @@ class Player extends Enemy {
                         console.log("WHOLE BOARD:", this.board.board);
                         foundCards = true;
                     }
-                    //check array 1 eating 8
 
                     for (let j = cardToPlay.valor - 1; j > 0; j--){
                         if(this.board.board[j - 1].length){

@@ -1,10 +1,30 @@
+let game;
+
 window.onload = () => {
     document.getElementById('start-button').onclick = () => {
-      startGame();
+      if(!game) {
+        startGame();
+      }
+    };
+
+    document.getElementById('restart-button').onclick = () => {
+      if(game && !game.gameRun) {
+        screenGameOver.classList.add('hidden');
+        screenGameWin.classList.add('hidden');
+        startGame();
+      }
+    };
+
+    document.getElementById('win-button').onclick = () => {
+      if(game && !game.gameRun) {
+        screenGameOver.classList.add('hidden');
+        screenGameWin.classList.add('hidden');
+        startGame();
+      }
     };
   
     function startGame() {
-      let game = new Game();
+      game = new Game();
       game.start();
     }
   };

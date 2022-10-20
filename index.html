@@ -9,6 +9,8 @@
 </head>
 <body>
 
+    
+    
     <div class="general">
       <div class="game-header">
         <img class="title-image" src="docs/assets/images/Kariba Title.png" alt="title-img">
@@ -21,9 +23,20 @@
         </div>
       </div>
 
+      <div class="hidden" id="game-over">
+        <img src="docs/assets/images/Kariba The End.png" alt="the-end">
+        <h1></h1>
+        <button id="restart-button">Restart Game</button>
+    </div>
+
+    <div class="hidden" id="game-win">
+      <img src="docs/assets/images/Kariba The End.png" alt="the-end">
+      <h1></h1>
+      <button id="win-button">Restart Game</button>
+  </div>
+
       <div>
         <div id="game-board">
-          <!-- por decidir o tamanho do canvas -->
           <canvas style="border: 5px solid black" id="canvas" width="1100" height="700"></canvas>
         </div>
       </div>
